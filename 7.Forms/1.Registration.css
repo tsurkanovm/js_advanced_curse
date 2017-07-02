@@ -1,0 +1,16 @@
+form {
+    margin-top: 50px;
+}
+
+small {
+    visibility: hidden;
+    color: indianred !important;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.watermark {
+    color: darkgray;
+}

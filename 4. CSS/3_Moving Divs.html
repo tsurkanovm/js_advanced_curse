@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Divs</title>
+    <link rel="stylesheet" type="text/css" href="3_move.css">
+</head>
+<body>
+    <div id="content">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+    </div>
+</body>
+<script>
+    function getRandomInt() {
+        return Math.floor(Math.random() * 699) + 1;
+    }
+
+    function start() {
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        var d3 = document.getElementById("d3");
+
+        d1.style.left = getRandomInt() + "px";
+        d1.style.top = getRandomInt() + "px";
+        d2.style.left = getRandomInt() + "px";
+        d2.style.top = getRandomInt() + "px";
+        d3.style.left = getRandomInt() + "px";
+        d3.style.top = getRandomInt() + "px";
+    }
+
+    setInterval(start, 1000);
+</script>
+</html>

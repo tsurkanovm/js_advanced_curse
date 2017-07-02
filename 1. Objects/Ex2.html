@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Share/VarDumper.js"></script>
+</head>
+<body>
+
+<script>
+    var Human = function (age) {
+        this.age = age;
+    };
+
+    var HumanArray = function () {
+        for (var i = 0; i < arguments.length; i++) {
+            this[i] = arguments[i];
+        };
+        this.length = arguments.length;
+    };
+
+    HumanArray.prototype = [];
+    HumanArray.prototype.sort = function (acs) {
+        return Array.prototype.sort.call(this, function (a, b) {
+            if (acs) {
+                return a.age - b.age;
+            }
+
+            return b.age - a.age;
+        })
+    };
+
+    var arr1 = new HumanArray(new Human(23), new Human(41), new Human(12));
+    arr1.sort(true);
+
+</script>
+</body>
+</html>

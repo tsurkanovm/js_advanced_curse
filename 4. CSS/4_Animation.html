@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Divs</title>
+    <link rel="stylesheet" type="text/css" href="4_animated.css">
+</head>
+<body>
+<div id="content">
+    Text that moving
+</div>
+<div id="buttons">
+    <button data-direction="top" data-increment="0">Top</button>
+    <button data-direction="top" data-increment="1">Down</button>
+    <button data-direction="left" data-increment="0">Left</button>
+    <button data-direction="left" data-increment="1">Right</button>
+</div>
+
+</body>
+<script>
+    var divBtn = document.getElementById("buttons");
+    var content = document.getElementById("content");
+
+    divBtn.addEventListener("click", function (e) {
+        var btn = e.target;
+        var data = btn.dataset;
+//        var currentValue = content.offsetLeft;
+        var currentValue = Number(getComputedStyle(content)[data.direction].replace('px',''));
+
+        function animate() {
+
+            if (Number(data.increment)) {
+                ++currentValue;
+            } else {
+                --currentValue;
+            }
+            content.style[data.direction] = currentValue + 'px';
+        }
+
+        for (var i = 0; i < 100; i++) {
+            setTimeout(animate, i*30);
+        }
+    })
+
+</script>
+</html>

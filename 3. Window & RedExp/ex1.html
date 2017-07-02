@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+</head>
+<body>
+<div style="font-size: large; color: cornflowerblue; font-weight: bold">
+    <span id="hour"></span>:<span id="min"></span>:<span id="sec"></span>
+    <br/>
+    <br/>
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+    <button id="btnReset">Reset</button>
+</div>
+</body>
+<script src="Timer.js"></script>
+<script>
+    var sec = document.getElementById("sec");
+    var min = document.getElementById("min");
+    var hour = document.getElementById("hour");
+    var btnStart = document.getElementById("btnStart");
+    var btnStop = document.getElementById("btnStop");
+    var btnReset = document.getElementById("btnReset");
+    var timerObj = new Timer(hour, min, sec);
+
+    btnStart.onclick = timerObj.start.bind(timerObj);
+    btnStop.onclick = timerObj.stop.bind(timerObj);
+    btnReset.onclick = timerObj.reset.bind(timerObj);
+    timerObj.init();
+</script>
+</html>

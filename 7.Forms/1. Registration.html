@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="1.Registration.css">
+    <script src="1.Registration.js"></script>
+</head>
+<body>
+    <form name="registration" class="container">
+        <h2 class="text-center">Registration form</h2>
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" data-empty="1" class="form-control watermark" id="login" data-describedby="loginEr" value="Enter login">
+            <small id="loginEr" class="form-text text-muted">You should fill this field</small>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" data-empty="1" class="form-control" id="name" data-describedby="nameEr" placeholder="Enter name">
+            <small id="nameEr" class="form-text text-muted">You should fill this field</small>
+        </div>
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" data-empty="1" class="form-control" id="firstName" data-describedby="firstNameEr" placeholder="Enter first name">
+            <small id="firstNameEr" class="form-text text-muted">You should fill this field</small>
+        </div>
+        <div class="form-group">
+            <label for="psw">Password</label>
+            <input type="password" data-empty="1" class="form-control" data-describedby="pswEr" id="psw" placeholder="Password">
+            <small id="pswEr" class="form-text text-muted">You should fill this field</small>
+        </div>
+        <div class="form-group">
+            <label for="pswConfirm">Confirm password</label>
+            <input type="password" class="form-control" id="pswConfirm" data-describedby="pswConfirmEr" placeholder="Confirm password">
+            <small id="pswConfirmEr" class="form-text text-muted">Password and Confirm password should be equal</small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" data-describedby="emailEr" placeholder="Enter email">
+            <small id="emailEr" class="form-text text-muted">Wrong e-mail address</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+
+</body>
+</html>

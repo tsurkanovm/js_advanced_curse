@@ -1,0 +1,33 @@
+div {
+    position: fixed;
+    left: 800px;
+    top: 400px;
+}
+
+input {
+    display: block;
+
+}
+
+span {
+    display: block;
+    visibility: hidden;
+    height: 20px;
+}
+.Error {
+    background-color: coral;
+}
+
+.ErrorMsg {
+    color: darkslateblue;
+    visibility: visible;
+    font-size: smaller;
+}
+
+.Success {
+    color: olivedrab;
+    visibility: visible;
+    font-size: large;
+    padding-top: 40px;
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Share/VarDumper.js"></script>
+</head>
+<body>
+
+</body>
+
+<script>
+    function Test (w) {
+        this.w = w;
+    }
+    function Box (w, h, d, material) {
+        this.w = w;
+        this.h = h;
+        this.d = d;
+        this.material = material;
+
+//        return new Test(this.w);
+    }
+
+    Box.prototype.volume = function () {
+        return this.w * this.h * this.d;
+    }
+
+    Box.prototype.equal = function (obj) {
+
+        return obj.material == this.material;
+    }
+
+    var box1 = new Box(5,10,20,'wood');
+    var box2 = new Box(1,10,2,'wood');
+
+//    document.writeln(box2.volume());
+//    document.writeln("</br>");
+//    document.writeln(box1.equal(box2));
+
+    VarDumper.dump([box1.volume(),box2.equal(box2)]);
+</script>
+</html>

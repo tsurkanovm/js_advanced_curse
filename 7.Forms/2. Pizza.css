@@ -1,0 +1,15 @@
+form {
+    padding: 20px 40px;
+    border: groove;
+    background-color: honeydew;
+    display: inline-block;
+}
+
+select {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    align-content: center;
+}

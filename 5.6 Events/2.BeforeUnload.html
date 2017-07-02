@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Defore unload</title>
+</head>
+<body>
+<form>
+    <textarea name="text" placeholder="type your text ..." style="display: block; margin: 20px 0px"></textarea>
+    <input name="saveBtn" type="submit" value="Save">
+</form>
+</body>
+<script>
+
+    window.addEventListener("beforeunload",closeChecker);
+
+    function closeChecker(event) {
+        event.returnValue = "Are you sure?";
+    }
+
+    document.forms[0].saveBtn.onclick = function (e) {
+        e.preventDefault();
+        if(document.forms[0].text.value){
+            window.removeEventListener("beforeunload",closeChecker);
+            e.target.value = "Saved";
+        }
+    }
+</script>
+</html>

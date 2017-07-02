@@ -1,0 +1,9 @@
+#content {
+    position: fixed;
+    font-size: xx-large;
+    left: 600px;
+    top: 400px;
+}
+button {
+    margin: 20px;
+}

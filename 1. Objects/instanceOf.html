@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Share/VarDumper.js"></script>
+</head>
+<body>
+<script>
+    var Human = function (age) {
+        this.age = age;
+    };
+     var Worker = function (level) {
+        this.level = level;
+    };
+     var Student = function (craziness) {
+        this.craziness = craziness;
+    };
+     var human = new Human(20);
+     var human2 = new Human(200);
+
+    Student.prototype = Human;
+    Worker.prototype = Human;
+
+     var Alex = new Student(5);
+     var Bred = new Worker(0);
+
+    VarDumper.dump([Alex instanceof Object]);
+    VarDumper.dump([Bred instanceof Student]);
+
+    console.dir(Alex);
+    console.dir(Bred);
+</script>
+
+</body>
+</html>

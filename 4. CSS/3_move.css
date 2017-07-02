@@ -1,0 +1,24 @@
+#content {
+    position: fixed;
+    height: 1000px;
+    width: 1000px;
+    left: 400px;
+    top: 150px;
+}
+
+div {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+}
+ #d1 {
+     background-color: olive;
+ }
+
+ #d2 {
+     background-color: cadetblue;
+ }
+
+ #d3 {
+     background-color: indigo;
+ }

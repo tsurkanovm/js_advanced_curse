@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza order form</title>
+    <link rel="stylesheet" href="2.%20Pizza.css">
+    <script src="pizza.js"></script>
+</head>
+<body>
+    <form>
+        <h2 class="text-center">Order form</h2>
+        <label for="size">Choose pizza size:</label>
+        <select id="size">
+            <option value="small">Small</option>
+            <option selected value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <label for="ingredients">Choose ingredients:</label>
+        <select id="ingredients" multiple="multiple">
+            <option value="tomato">tomato</option>
+            <option value="cheese">cheese</option>
+            <option value="mushrooms">mushrooms</option>
+            <option value="olives">olives</option>
+            <option value="beacon">beacon</option>
+            <option value="salad">salad</option>
+        </select>
+    <input name="order" value="Get the order" type="button">
+    </form>
+</body>
+<script>
+    document.forms[0].order.onclick = function () {
+        var ingredients = document.getElementById("ingredients").selectedOptions;
+        var sizeValue = document.getElementById("size").value;
+
+        var Calculator = new MenuCalculator(sizeValue, ingredients);
+
+        alert(Calculator.calculate());
+    }
+</script>
+</html>

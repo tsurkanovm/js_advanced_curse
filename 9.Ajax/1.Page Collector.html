@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page collector</title>
+</head>
+<body>
+<h1>Lets collect content from two page</h1>
+<button>Start</button>
+<div></div>
+<div></div>
+</body>
+<script>
+    var hxr = new XMLHttpRequest();
+    var hxr2 = new XMLHttpRequest();
+
+    document.getElementsByTagName("button")[0].onclick = function () {
+        hxr.open("Get","../7.Forms/2. Pizza Order.html");
+        hxr2.open("Get","../5.6 Events/1.Calculator Drag&Drop.html");
+
+        hxr.onreadystatechange = function (e) {
+            if(e.target.readyState == 4 && e.target.status == 200){
+                document.getElementsByTagName("div")[0].innerHTML = e.target.responseText;
+
+                hxr2.onreadystatechange = function (e) {
+                    if(e.target.readyState == 4 && e.target.status == 200){
+                        document.getElementsByTagName("div")[1].innerHTML = e.target.responseText;
+                    }
+                }
+
+                hxr2.send();
+
+            }
+        }
+        hxr.send();
+
+    }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Running Button</title>
+    <style>
+        #discount {
+            height: 40px;
+            width:160px;
+            margin: 10px;
+            position: absolute;
+            top:200px;
+            left:400px;
+        }
+    </style>
+</head>
+<body>
+<button id="discount">Get discount!</button>
+</body>
+<script>
+    var btn = document.getElementById("discount");
+
+    var centerX = Math.floor(window.innerWidth/2);
+    var centerY = Math.floor(window.innerHeight/2);
+
+    btn.addEventListener("mouseover", start);
+
+    function start(event) {
+         var x = event.target.offsetLeft;
+         var y = event.target.offsetTop;
+
+         if(x < centerX){
+             event.target.style.left = x + getRandomInt(centerX - 160) + "px";
+         } else {
+             event.target.style.left = x - getRandomInt(centerX - 160) + "px";
+         }
+
+        if(y < centerY){
+            event.target.style.top = y + getRandomInt(centerY - 40) + "px";
+        } else {
+            event.target.style.top = y - getRandomInt(centerY - 40) + "px";
+        }
+    }
+
+    function getRandomInt(limit) {
+        return Math.floor(Math.random() * limit - 1) + 1;
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function counter() {
+        var i = 1;
+        return function () {
+            console.log(i++);
+        }
+    }
+
+    var i = 5;
+    setInterval(counter(), 1000);
+
+</script>
+
+</body>
+</html>

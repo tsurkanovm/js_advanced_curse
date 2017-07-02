@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Last visit</title>
+    <style>
+        p {
+            position: absolute;
+            left:300px;
+            top:100px;
+            align-content: center;
+            font-size: larger;
+            font-weight: bold;
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<p></p>
+</body>
+<script>
+    var content = document.getElementsByTagName("p")[0];
+    var visited = findCookieValue("last_visit");
+    if(visited)
+        content.innerText = "Last visit is - " + visited;
+
+    saveVisit(new Date());
+
+    function findCookieValue(cookieName) {
+        var allcookies = document.cookie;
+        var pos = allcookies.indexOf(cookieName + "=");
+
+        // Если cookie с указанным именем найден, извлечь его значения.
+        if (pos != -1) {
+            var start = pos + cookieName.length + 1;
+            var end = allcookies.indexOf(";", start);
+
+            if (end == -1) end = allcookies.length;
+
+            var value = allcookies.substring(start, end);
+            value = decodeURIComponent(value);
+            return value;
+        }
+
+        return false;
+    }
+
+    function saveVisit(date) {
+        document.cookie = "last_visit = " + encodeURIComponent(date.toUTCString()) + ";";d
+    }
+</script>
+</html>

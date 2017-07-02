@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../Share/VarDumper.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    function FK(one, two) {
+        this.one = one;
+        this.two = two;
+        this.say = function () {
+            return this.one + ' ' + this.two;
+        }
+    }
+
+    FK.three = 3;
+
+    var fk = new FK(1,2);
+
+    VarDumper.dump([fk.say, fk.three, FK.three, FK.say])
+</script>
+</html>
