@@ -1,4 +1,4 @@
 requirejs.config({
-    baseUrl: './app',
+    baseUrl: './app/js',
     deps: ['module1']
 });
