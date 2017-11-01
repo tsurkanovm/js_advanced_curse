@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="init_components.js"></script>
+    <title>Components</title>
+</head>
+<body>
+<p>By binding</p>
+<div data-bind="component:'component-hello-world'"></div>
+<br/>
+<p>By tag</p>
+<component-hello-world></component-hello-world>
+</body>
+</html>

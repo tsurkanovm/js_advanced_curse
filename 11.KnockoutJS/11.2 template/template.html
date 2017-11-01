@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="init_template.js"></script>
+</head>
+<body>
+    <div id="one" data-bind="template:{'name':'hello-world','data':first}"></div>
+
+    <div id="two" data-bind="template:{'name':'hello-world','data':second}"></div>
+
+    <script type="text/html" id="hello-world">
+        <h1 data-bind="text:theTitle"></h1>
+        <p data-bind="text:theContent"></p>
+    </script>
+</body>
+</html>
