@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainer</title>
+    <!--<script data-main="config.js" src="../vendor/require.js"></script>-->
+    <link rel="stylesheet" href="../vendor/jquery-ui-1.12.1/jquery-ui.min.css" />
+    <script src="../vendor/jquery-3.3.1.js"></script>
+    <script src="../vendor/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.tsum.trainer.js"></script>
+</head>
+<body>
+
+<div id="trainer-container">
+<div>
+    Here is the clock:<span id="clock">0</span>s
+</div>
+<div>
+    <button id="btn_start">Start</button>
+    <button id="btn_stop">Pause</button>
+</div>
+<br/>
+<br/>
+</div>
+
+<script>
+    $(function () {
+        $('#trainer-container').trainer();
+    });
+</script>
+</body>
+</html>
