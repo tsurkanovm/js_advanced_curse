@@ -17,10 +17,11 @@
         }
     }
 
-    FK.three = 3;
+    FK.four = 4; // like a static
+    FK.prototype.three = 3;
 
     var fk = new FK(1,2);
 
-    VarDumper.dump([fk.say, fk.three, FK.three, FK.say])
+    VarDumper.dump([fk.four, fk.three, FK.four, FK.three])
 </script>
 </html>
