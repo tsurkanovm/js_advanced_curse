@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="init.js"></script>
     <title>KO</title>
@@ -10,19 +10,34 @@
 <body>
 <div id="main">
     <p data-bind="text:theValue"></p>
-    <select data-bind="value:theValue">
-        <option value="">-- Choose --</option>
-        <option value="1">First</option>
-        <option value="2">Second</option>
-        <option value="3">Third</option>
+    <select data-bind="options: options, value: selectedOpt, optionsCaption: optionsCaption1"></select>
+    <select data-bind="options: optionsObj, optionsText: 'label', optionsValue: 'value', optionsCaption: optionsCaption2">
     </select>
-    <input type="text" data-bind="value:theValue"/>
-
     <div>
         <br/><br/>
-        <button data-bind="click: pickRandomValue" id="button">Do It</button>
+        <button data-bind="click: add" id="button">Do It</button>
     </div>
+</div>
 
+<div id="computed">
+    <label for="name"></label>
+    <input type="text" name="name" id="name" data-bind="textInput: name" autocomplete="off"/>
+
+    <label for="second-name"></label>
+    <input type="text" name="second-name" id="second-name" data-bind="textInput: sec" autocomplete="off"/>
+
+    <p>Customer Name: <strong data-bind="text: customerName"></strong></p>
+    <p>Card Holder: <strong data-bind="text: cardHolder"></strong></p>
+</div>
+
+<div id="cycle">
+    <!-- ko foreach: collection -->
+    <!-- ko text: console.log('First Level ', $data) --><!-- /ko -->
+        <!-- ko foreach: $data -->
+    <!-- ko text: console.log('Second Level ', $context) --><!-- /ko -->
+            <button data-bind="click: $root.onClick">Try to click</button>
+        <!-- /ko -->
+    <!-- /ko -->
 </div>
 </body>
 </html>
